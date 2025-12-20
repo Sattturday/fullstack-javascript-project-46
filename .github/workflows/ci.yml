@@ -27,7 +27,7 @@ jobs:
           cache: 'npm'
       - run: make install
       - run: make lint
-      - run: test-coverage
+      - run: make test-coverage
       - name: SonarQube Scan
         uses: SonarSource/sonarqube-scan-action@v6
         env:

@@ -5,7 +5,9 @@
   "description": "[![Actions Status](https://github.com/Sattturday/fullstack-javascript-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/Sattturday/fullstack-javascript-project-46/actions)",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "NODE_OPTIONS=--experimental-vm-modules jest",
+    "test:watch": "npm test -- --watch",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
@@ -27,6 +29,7 @@
     "@eslint/js": "^9.39.2",
     "@stylistic/eslint-plugin": "^5.6.1",
     "eslint": "^9.39.2",
-    "globals": "^16.5.0"
+    "globals": "^16.5.0",
+    "jest": "^30.2.0"
   }
 }

@@ -38,3 +38,11 @@ test('should throw error for non-existent file', () => {
 
   expect(() => genDiff(file1, file2)).toThrow()
 })
+
+// Тест для непподерживаемого формата
+test('should throw error for unsupported file format', () => {
+  const file1 = getFixturePath('unsupported.txt')
+  const file2 = getFixturePath('file2.json')
+
+  expect(() => genDiff(file1, file2)).toThrow()
+})

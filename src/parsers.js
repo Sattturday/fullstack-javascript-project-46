@@ -6,10 +6,11 @@ const parsers = {
   yaml: yaml.load,
 }
 
-export default (content, format) => {
+const parsers_ = (content, format) => {
   if (!parsers[format]) {
     throw new Error(`Unsupported file format: ${format}`)
   }
 
   return parsers[format](content)
 }
+export default parsers_

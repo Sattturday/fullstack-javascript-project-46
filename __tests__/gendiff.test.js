@@ -1,6 +1,6 @@
-import path from 'path'
-import { fileURLToPath } from 'url'
-import fs from 'fs'
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
+import fs from 'node:fs'
 import { expect, test, beforeAll } from '@jest/globals'
 import genDiff from '../src/index.js'
 
@@ -17,21 +17,20 @@ beforeAll(() => {
   expected = readFixtureFile('expected.txt')
 })
 
-test('gendiff flat json', () => {
+test('gendiff nested json', () => {
   const file1 = getFixturePath('file1.json')
   const file2 = getFixturePath('file2.json')
 
   expect(genDiff(file1, file2)).toBe(expected)
 })
 
-test('gendiff flat yml', () => {
+test('gendiff nested yml', () => {
   const file1 = getFixturePath('file1.yml')
   const file2 = getFixturePath('file2.yml')
 
   expect(genDiff(file1, file2)).toBe(expected)
 })
 
-// Тест для несуществующих файлов (обработка ошибок)
 test('should throw error for non-existent file', () => {
   const file1 = getFixturePath('nonexistent.json')
   const file2 = getFixturePath('file2.json')
@@ -39,10 +38,16 @@ test('should throw error for non-existent file', () => {
   expect(() => genDiff(file1, file2)).toThrow()
 })
 
-// Тест для непподерживаемого формата
 test('should throw error for unsupported file format', () => {
   const file1 = getFixturePath('unsupported.txt')
   const file2 = getFixturePath('file2.json')
 
   expect(() => genDiff(file1, file2)).toThrow()
+})
+
+test('should throw error for unknown formatter', () => {
+  const file1 = getFixturePath('file1.json')
+  const file2 = getFixturePath('file2.json')
+
+  expect(() => genDiff(file1, file2, 'unknown')).toThrow('Unknown format')
 })

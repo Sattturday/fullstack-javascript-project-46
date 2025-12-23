@@ -1,9 +1,10 @@
-// const formatLine = (sign, key, value) => `  ${sign} ${key}: ${value}`
 const isObject = value =>
   typeof value === 'object' && value !== null && !Array.isArray(value)
 
 const buildDiff = (data1, data2) => {
-  const keys = Object.keys({ ...data1, ...data2 }).sort()
+  const keys = Object.keys({ ...data1, ...data2 }).sort((a, b) =>
+    a.localeCompare(b),
+  )
 
   return keys.map((key) => {
     const hasInFirst = Object.hasOwn(data1, key)

@@ -13,10 +13,12 @@ const readFixtureFile = filename =>
 
 let plainExpected
 let stylishExpected
+let jsonExpected
 
 beforeAll(() => {
   plainExpected = readFixtureFile('plainExpected.txt')
   stylishExpected = readFixtureFile('stylishExpected.txt')
+  jsonExpected = readFixtureFile('jsonExpected.json')
 })
 
 test('gendiff default stylish format nested json', () => {
@@ -52,6 +54,26 @@ test('gendiff plain nested yml', () => {
   const file2 = getFixturePath('file2.yml')
 
   expect(genDiff(file1, file2, 'plain')).toBe(plainExpected)
+})
+
+test('gendiff json format json', () => {
+  const file1 = getFixturePath('file1.json')
+  const file2 = getFixturePath('file2.json')
+
+  const result = JSON.parse(genDiff(file1, file2, 'json'))
+  const expected = JSON.parse(jsonExpected)
+
+  expect(result).toEqual(expected)
+})
+
+test('gendiff json format yml', () => {
+  const file1 = getFixturePath('file1.yml')
+  const file2 = getFixturePath('file2.yml')
+
+  const result = JSON.parse(genDiff(file1, file2, 'json'))
+  const expected = JSON.parse(jsonExpected)
+
+  expect(result).toEqual(expected)
 })
 
 test('should throw error for non-existent file', () => {

@@ -7,6 +7,7 @@ const genDiff = (filePath1, filePath2, formatName = 'stylish') => {
   const data2 = parseFile(filePath2)
 
   const diffTree = buildDiff(data1, data2)
+  console.log('diffTree', diffTree)
   const format = getFormatter(formatName)
 
   return format(diffTree)

@@ -1,10 +1,12 @@
 import stylish from './stylish.js'
+import plain from './plain.js'
 
 const formatters = {
   stylish,
+  plain,
 }
 
-export default (formatName = 'stylish') => {
+const index = (formatName = 'stylish') => {
   const formatter = formatters[formatName]
 
   if (!formatter) {
@@ -13,3 +15,5 @@ export default (formatName = 'stylish') => {
 
   return formatter
 }
+
+export default index

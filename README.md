@@ -9,6 +9,6 @@
 [![Node CI](https://github.com/Sattturday/fullstack-javascript-project-46/actions/workflows/ci.yml/badge.svg)](https://github.com/Sattturday/fullstack-javascript-project-46/actions/workflows/ci.yml)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Sattturday_fullstack-javascript-project-46&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Sattturday_fullstack-javascript-project-46)
 
-## Demo
+## Пример сравнения файлов в форматах stylish (по умолчанию) и plain
 
-[![asciinema](https://asciinema.org/a/4K6xxv1KU5xm7oCriSr4VfQbT.svg)](https://asciinema.org/a/4K6xxv1KU5xm7oCriSr4VfQbT)
+[![asciinema](https://asciinema.org/a/QRZEVBidwyTNRPDN1LlpPgkMw.svg)](https://asciinema.org/a/QRZEVBidwyTNRPDN1LlpPgkMw)

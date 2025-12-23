@@ -11,7 +11,8 @@ const getFixturePath = name => path.join(__dirname, '..', '__fixtures__', name)
 const readFixtureFile = filename =>
   fs.readFileSync(getFixturePath(filename), 'utf-8')
 
-let expected
+let plainExpected
+let stylishExpected
 
 beforeAll(() => {
   plainExpected = readFixtureFile('plainExpected.txt')

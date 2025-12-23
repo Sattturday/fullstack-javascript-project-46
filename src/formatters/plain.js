@@ -1,4 +1,4 @@
-const formatValue = value => {
+const formatValue = (value) => {
   if (value === null) return 'null'
   if (typeof value === 'object') return '[complex value]'
   if (typeof value === 'string') return `'${value}'`
@@ -6,13 +6,13 @@ const formatValue = value => {
 }
 
 const plain = (diff, parentPath = '') => {
-  const lines = diff.flatMap(node => {
+  const lines = diff.flatMap((node) => {
     const currentPath = parentPath ? `${parentPath}.${node.key}` : node.key
 
     switch (node.type) {
       case 'added':
         return `Property '${currentPath}' was added with value: ${formatValue(
-          node.value
+          node.value,
         )}`
 
       case 'removed':
@@ -20,7 +20,7 @@ const plain = (diff, parentPath = '') => {
 
       case 'changed':
         return `Property '${currentPath}' was updated. From ${formatValue(
-          node.value1
+          node.value1,
         )} to ${formatValue(node.value2)}`
 
       case 'nested':

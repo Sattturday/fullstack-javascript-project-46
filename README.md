@@ -69,8 +69,6 @@ gendiff --format plain file1.json file2.json
 
 [![asciinema](https://asciinema.org/a/XLQMR1UezbDiVZSAp0l8c4F4V.svg)](https://asciinema.org/a/XLQMR1UezbDiVZSAp0l8c4F4V)
 
----
-
 ### Пример сравнения вложенных файлов в формате JSON.
 
 Структурированный вывод в формате JSON, предназначенный для использования другими программами.
@@ -80,8 +78,6 @@ gendiff --format json file1.json file2.json
 ```
 
 [![asciinema](https://asciinema.org/a/hqCREUoetq08wdYJDRPgjHV4k.svg)](https://asciinema.org/a/hqCREUoetq08wdYJDRPgjHV4k)
-
----
 
 ## Поддерживаемые форматы входных данных
 
